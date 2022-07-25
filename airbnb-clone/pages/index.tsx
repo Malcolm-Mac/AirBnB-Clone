@@ -1,11 +1,13 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Banner from '../components/Banner'
+import Footer from '../components/Footer'
 import Header from '../components/Header'
+import LargeCard from '../components/LargeCard'
 import MediumCard from '../components/MediumCard'
 import SmallCard from '../components/SmallCard'
 
-const Home: NextPage = ({ exploreData, cardsData }: any) => {
+const Home: NextPage = ({ exploreData, cardsData, lar }: any) => {
 
   return (
     <div className="">
@@ -18,6 +20,7 @@ const Home: NextPage = ({ exploreData, cardsData }: any) => {
       <Banner />
 
       <main className="max-w-7xl mx-auto px-8 sm:px-16">
+
         <section className="pt-6">
           <h2 className="text-4xl font-semibold pb-5">
             Explore Nearby
@@ -52,8 +55,19 @@ const Home: NextPage = ({ exploreData, cardsData }: any) => {
           </div>
 
         </section>
+
+        <section>
+          <LargeCard
+            img="https://links.papareact.com/4cj"
+            title="The Greatest Outdoors"
+            description="Wishlists curated by Airbnb."
+            buttonText="Get Inspired"
+          />
+        </section>
       </main>
 
+      <Footer />
+      
     </div>
   );
 }
