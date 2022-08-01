@@ -67,7 +67,7 @@ const Home: NextPage = ({ exploreData, cardsData, lar }: any) => {
       </main>
 
       <Footer />
-      
+
     </div>
   );
 }

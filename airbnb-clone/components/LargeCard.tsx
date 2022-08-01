@@ -3,9 +3,9 @@ import Image from 'next/image';
 
 const LargeCard = ({ img, title, description, buttonText }: any) => {
     return (
-        <div className="relative py-16 cursor-pointer">
+        <section className="relative py-16 cursor-pointer">
 
-            <div className="relative h-96 min-w-[200px]">
+            <div className="relative h-96 min-w-[300px]">
                 <Image
                     priority
                     src={img}
@@ -23,7 +23,7 @@ const LargeCard = ({ img, title, description, buttonText }: any) => {
                 </button>
             </div>
             
-        </div>
+        </section>
     )
 }
 
