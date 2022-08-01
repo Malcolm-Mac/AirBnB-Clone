@@ -97,7 +97,7 @@ const Header = ({placeholder}:any) => {
                                 type="number"
                                 value={noOfGuests}
                                 min={1}
-                                onChange={(e) => setNoOfGuests(e.target.value)}
+                                onChange={(e) => setNoOfGuests(parseInt(e.target.value))}
                                 className="w-12 pl-2 text-lg outline-none text-red-500"
                             />
                         </div>
