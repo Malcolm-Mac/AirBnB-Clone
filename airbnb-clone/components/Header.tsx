@@ -14,7 +14,7 @@ import 'react-date-range/dist/theme/default.css';
 import { DateRangePicker } from 'react-date-range';
 import { useRouter } from 'next/dist/client/router';
 
-const Header = ({placeholder}:any) => {
+const Header = ({ placeholder }: any) => {
     const [searchInput, setSearchInput] = useState("");
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
@@ -39,7 +39,7 @@ const Header = ({placeholder}:any) => {
     const searchHandler = () => {
         router.push({
             pathname: 'search',
-            query:{
+            query: {
                 location: searchInput,
                 startDate: startDate.toISOString(),
                 endDate: endDate.toISOString(),
@@ -101,9 +101,18 @@ const Header = ({placeholder}:any) => {
                                 className="w-12 pl-2 text-lg outline-none text-red-500"
                             />
                         </div>
-                        <div className="flex">
-                            <button onClick={cancelHandler} className="flex-grow">Cancel</button>
-                            <button onClick={searchHandler} className="flex-grow">Search</button>
+                        <div className="flex space-x-3">
+                            <button onClick={cancelHandler}
+                                className="flex-grow
+                            hover:shadow-xl shadow-md active:scale-90 traansition duration-150 
+                            hover:bg-red-500 py-2 rounded-2xl hover:text-white">
+                                Cancel
+                            </button>
+                            <button onClick={searchHandler}
+                                className="flex-grow hover:shadow-xl shadow-md active:scale-90 traansition duration-150 
+                                hover:bg-red-500 py-2 rounded-2xl hover:text-white">
+                                Search
+                            </button>
                         </div>
                     </div>
                 )

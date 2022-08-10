@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import { useRouter } from 'next/dist/client/router';
 import { format } from 'date-fns';
 import InfoCard from '../components/InfoCard';
+import Maps from '../components/Maps';
 
 const Search = ({ searchResult }: any) => {
     const router = useRouter();
@@ -17,8 +18,9 @@ const Search = ({ searchResult }: any) => {
         <div>
             <Header placeholder={`${location} | ${range} | ${noOfGuests} guests`} />
 
-            <main>
+            <main className="flex">
                 <section className="relative flex-grow pt-14 px-6">
+
                     <p>
                         300+ Stays - {range} - for {noOfGuests} number of guests
                     </p>
@@ -44,24 +46,30 @@ const Search = ({ searchResult }: any) => {
                             More filters
                         </p>
                     </div>
+
+                    <div className="flex flex-col">
+                        {
+                            searchResult?.map(({ img, location, title, description, star, price, total }: any) => (
+                                <InfoCard
+                                    key={img}
+                                    img={img}
+                                    title={title}
+                                    location={location}
+                                    description={description}
+                                    star={star}
+                                    price={price}
+                                    total={total}
+                                />
+                            ))
+                        }
+                    </div>
+
                 </section>
 
-                <section className="">
-                    {
-                        searchResult?.map(({ img, location, title, description, star, price, total }: any) => (
-                            <InfoCard
-                                key={img}
-                                img={img}
-                                title={title}
-                                location={location}
-                                description={description}
-                                star={star}
-                                price={price}
-                                total={total}
-                            />
-                        ))
-                    }
+                <section className=" xl:inline-flex xl:min-w-[600px]">
+                    <Maps searchResult={searchResult} />
                 </section>
+
             </main>
 
             <Footer />

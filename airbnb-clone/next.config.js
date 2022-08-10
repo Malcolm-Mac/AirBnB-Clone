@@ -7,4 +7,7 @@ module.exports = {
   compiler: {
     styledComponents: true,
   },
+  env:{
+    mapbox_key: "pk.eyJ1IjoibWFsY29sbTQ1IiwiYSI6ImNsNmV1aWszbDAzNTIzZHBtYmFwaTZqeDcifQ.uIQfhmE3XbeeOuETF1d_hQ"
+  }
 }
